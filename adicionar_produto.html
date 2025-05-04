@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Produto</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Adicionar Novo Produto</h1>
+        <a href="index.html">Voltar para o Início</a>
+    </header>
+    <main>
+        <form id="form-adicionar-produto">
+            <div>
+                <label for="codigo">Código:</label>
+                <input type="text" id="codigo" name="codigo" required>
+            </div>
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div>
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao"></textarea>
+            </div>
+            <div>
+                <label for="preco_custo">Preço de Custo:</label>
+                <input type="number" id="preco_custo" name="preco_custo" step="0.01">
+            </div>
+            <div>
+                <label for="preco_venda">Preço de Venda:</label>
+                <input type="number" id="preco_venda" name="preco_venda" step="0.01" required>
+            </div>
+            <div>
+                <label for="quantidade">Quantidade Inicial:</label>
+                <input type="number" id="quantidade" name="quantidade" value="0" required>
+            </div>
+            <div>
+                <label for="categoria">Categoria:</label>
+                <select id="categoria" name="categoria">
+                    <option value="">Selecione</option>
+                    <option value="eletronicos">Eletrônicos</option>
+                    <option value="alimentos">Alimentos</option>
+                    <option value="vestuario">Vestuário</option>
+                    </select>
+            </div>
+            <div>
+                <label for="fornecedor">Fornecedor:</label>
+                <input type="text" id="fornecedor" name="fornecedor">
+            </div>
+            <button type="submit">Salvar Produto</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 Sistema de Estoque</p>
+    </footer>
+    <script src="js/script.js"></script>
+    <script>
+        // No futuro, este script enviará os dados do formulário para o backend
+        document.getElementById('form-adicionar-produto').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o envio padrão do formulário
+            console.log("Dados do formulário a serem enviados (simulação):", {
+                codigo: document.getElementById('codigo').value,
+                nome: document.getElementById('nome').value,
+                descricao: document.getElementById('descricao').value,
+                preco_custo: document.getElementById('preco_custo').value,
+                preco_venda: document.getElementById('preco_venda').value,
+                quantidade: document.getElementById('quantidade').value,
+                categoria: document.getElementById('categoria').value,
+                fornecedor: document.getElementById('fornecedor').value
+            });
+            alert("Produto adicionado (simulação)!");
+            document.getElementById('form-adicionar-produto').reset();
+        });
+    </script>
+</body>
+</html>

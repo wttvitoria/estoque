@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrada/Saída de Estoque</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Entrada/Saída de Estoque</h1>
+        <a href="index.html">Voltar para o Início</a>
+    </header>
+    <main>
+        <form id="form-movimentacao-estoque">
+            <div>
+                <label for="produto">Produto:</label>
+                <select id="produto" name="produto" required>
+                    <option value="">Selecione um produto</option>
+                    <option value="123">Produto Exemplo 1</option>
+                    <option value="456">Produto Exemplo 2</option>
+                </select>
+            </div>
+            <div>
+                <label for="tipo_movimentacao">Tipo de Movimentação:</label>
+                <select id="tipo_movimentacao" name="tipo_movimentacao" required>
+                    <option value="entrada">Entrada</option>
+                    <option value="saida">Saída</option>
+                </select>
+            </div>
+            <div>
+                <label for="quantidade_movimentacao">Quantidade:</label>
+                <input type="number" id="quantidade_movimentacao" name="quantidade_movimentacao" value="1" required>
+            </div>
+            <div>
+                <label for="data_movimentacao">Data:</label>
+                <input type="date" id="data_movimentacao" name="data_movimentacao" required>
+            </div>
+            <button type="submit">Registrar Movimentação</button>
+        </form>
+
+        <h2>Histórico de Movimentações (Exemplo)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Tipo</th>
+                    <th>Quantidade</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Produto">Produto Exemplo 1</td>
+                    <td data-label="Tipo">Entrada</td>
+                    <td data-label="Quantidade">5</td>
+                    <td data-label="Data">2025-05-03</td>
+                </tr>
+                <tr>
+                    <td data-label="Produto">Produto Exemplo 2</td>
+                    <td data-label="Tipo">Saída</td>
+                    <td data-label="Quantidade">2</td>
+                    <td data-label="Data">2025-05-02</td>
+                </tr>
+                </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2025 Sistema de Estoque</p>
+    </footer>
+    <script src="js/script.js"></script>
+    <script>
+        // No futuro, este script buscará os produtos para o select e enviará os dados de movimentação para o backend
+        document.getElementById('form-movimentacao-estoque').addEventListener('submit', function(event) {
+            event.preventDefault();
+            console.log("Dados da movimentação a serem enviados (simulação):", {
+                produto: document.getElementById('produto').value,
+                tipo_movimentacao: document.getElementById('tipo_movimentacao').value,
+                quantidade_movimentacao: document.getElementById('quantidade_movimentacao').value,
+                data_movimentacao: document.getElementById('data_movimentacao').value
+            });
+            alert("Movimentação registrada (simulação)!");
+            document.getElementById('form-movimentacao-estoque').reset();
+        });
+    </script>
+</body>
+</html>

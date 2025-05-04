@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Categorias</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Gerenciar Categorias</h1>
+        <a href="index.html">Voltar para o Início</a>
+    </header>
+    <main>
+        <section id="lista-de-categorias">
+            <h2>Categorias Existentes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="categorias-tbody">
+                    </tbody>
+            </table>
+        </section>
+
+        <section id="adicionar-categoria">
+            <h2>Adicionar Nova Categoria</h2>
+            <form id="form-adicionar-categoria">
+                <div>
+                    <label for="nome-categoria">Nome:</label>
+                    <input type="text" id="nome-categoria" name="nome-categoria" required>
+                </div>
+                <button type="submit">Adicionar Categoria</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Sistema de Estoque</p>
+    </footer>
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoriasTbody = document.getElementById('categorias-tbody');
+            const formAdicionarCategoria = document.getElementById('form-adicionar-categoria');
+            const nomeCategoriaInput = document.getElementById('nome-categoria');
+
+            // Simulação de categorias existentes
+            const categoriasSimuladas = [
+                { id: 1, nome: 'Eletrônicos' },
+                { id: 2, nome: 'Alimentos' },
+                { id: 3, nome: 'Vestuário' }
+            ];
+
+            function exibirCategorias() {
+                categoriasTbody.innerHTML = '';
+                categoriasSimuladas.forEach(categoria => {
+                    const row = categoriasTbody.insertRow();
+                    row.innerHTML = `
+                        <td>${categoria.nome}</td>
+                        <td><button>Editar</button> <button>Excluir</button></td>
+                    `;
+                });
+            }
+
+            formAdicionarCategoria.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const novoNomeCategoria = nomeCategoriaInput.value.trim();
+                if (novoNomeCategoria) {
+                    const novoId = categoriasSimuladas.length > 0 ? Math.max(...categoriasSimuladas.map(c => c.id)) + 1 : 1;
+                    categoriasSimuladas.push({ id: novoId, nome: novoNomeCategoria });
+                    exibirCategorias();
+                    nomeCategoriaInput.value = ''; // Limpa o formulário
+                    alert(`Categoria "${novoNomeCategoria}" adicionada (simulação)!`);
+                } else {
+                    alert('Por favor, insira um nome para a categoria.');
+                }
+            });
+
+            exibirCategorias(); // Exibe as categorias iniciais
+        });
+    </script>
+</body>
+</html>

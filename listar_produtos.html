@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Produtos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Listagem de Produtos</h1>
+        <a href="index.html">Voltar para o Início</a>
+    </header>
+    <main>
+        <div class="filtros-busca">
+            <div class="busca">
+                <label for="busca-produto">Buscar Produto:</label>
+                <input type="text" id="busca-produto" placeholder="Nome ou Código">
+            </div>
+            <div class="filtro">
+                <label for="filtro-categoria">Filtrar por Categoria:</label>
+                <select id="filtro-categoria">
+                    <option value="">Todas as Categorias</option>
+                    <option value="eletronicos">Eletrônicos</option>
+                    <option value="alimentos">Alimentos</option>
+                    <option value="vestuario">Vestuário</option>
+                </select>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Quantidade</th>
+                    <th>Preço de Venda</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="lista-de-produtos">
+                <tr>
+                    <td data-label="Código">123</td>
+                    <td data-label="Nome">Produto Exemplo 1</td>
+                    <td data-label="Quantidade">10</td>
+                    <td data-label="Preço de Venda">R$ 25,00</td>
+                    <td data-label="Ações"><button>Editar</button> <button>Excluir</button></td>
+                </tr>
+                <tr>
+                    <td data-label="Código">456</td>
+                    <td data-label="Nome">Produto Exemplo 2</td>
+                    <td data-label="Quantidade">5</td>
+                    <td data-label="Preço de Venda">R$ 50,00</td>
+                    <td data-label="Ações"><button>Editar</button> <button>Excluir</button></td>
+                </tr>
+                </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2025 Sistema de Estoque</p>
+    </footer>
+    <script src="js/script.js"></script>
+    <script>
+        
+        // No futuro, este script buscará os dados do backend e preencherá a tabela
+    </script>
+</body>
+</html>

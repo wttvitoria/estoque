@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Detalhes do Produto</h1>
+        <a href="listar_produtos.html">Voltar para a Listagem</a>
+    </header>
+    <main id="detalhes-produto">
+        </main>
+    <footer>
+        <p>&copy; 2025 Sistema de Estoque</p>
+    </footer>
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const detalhesProdutoDiv = document.getElementById('detalhes-produto');
+            // Simulação de obter o ID do produto da URL (será mais dinâmico com backend)
+            const urlParams = new URLSearchParams(window.location.search);
+            const produtoId = urlParams.get('id');
+
+            // Simulação de dados detalhados do produto (no futuro, virá do backend)
+            const produtosSimulados = [
+                { id: 123, codigo: 'ABC-001', nome: 'Produto Exemplo 1', descricao: 'Descrição detalhada do produto exemplo 1.', precoCusto: 20.00, precoVenda: 25.00, quantidade: 10, fornecedor: 'Fornecedor XYZ', categoria: 'eletronicos', dataCadastro: '2025-01-15' },
+                { id: 456, codigo: 'DEF-002', nome: 'Produto Exemplo 2', descricao: 'Outra descrição detalhada para o produto 2.', precoCusto: 40.00, precoVenda: 50.00, quantidade: 5, fornecedor: 'Fornecedor ABC', categoria: 'alimentos', dataCadastro: '2025-02-20' },
+                { id: 789, codigo: 'GHI-003', nome: 'Outro Produto Eletrônico', descricao: 'Detalhes específicos deste eletrônico.', precoCusto: 80.00, precoVenda: 100.00, quantidade: 20, fornecedor: 'Tech Solutions', categoria: 'eletronicos', dataCadastro: '2025-03-10' },
+                { id: 101, codigo: 'JKL-004', nome: 'Item Alimentício Teste', descricao: 'Informações nutricionais e de validade.', precoCusto: 8.00, precoVenda: 10.00, quantidade: 15, fornecedor: 'Organic Foods Inc.', categoria: 'alimentos', dataCadastro: '2025-04-01' },
+                { id: 202, codigo: 'MNO-005', nome: 'Vestuário Básico', descricao: 'Detalhes sobre tamanhos e materiais.', precoCusto: 25.00, precoVenda: 30.00, quantidade: 30, fornecedor: 'Fashion Style Ltd.', categoria: 'vestuario', dataCadastro: '2025-04-25' }
+            ];
+
+            const produto = produtosSimulados.find(p => p.id === parseInt(produtoId));
+
+            if (produto) {
+                detalhesProdutoDiv.innerHTML = `
+                    <h2>${produto.nome}</h2>
+                    <p><strong>Código:</strong> ${produto.codigo}</p>
+                    <p><strong>Descrição:</strong> ${produto.descricao}</p>
+                    <p><strong>Preço de Custo:</strong> R$ ${produto.precoCusto.toFixed(2)}</p>
+                    <p><strong>Preço de Venda:</strong> R$ ${produto.precoVenda.toFixed(2)}</p>
+                    <p><strong>Quantidade em Estoque:</strong> ${produto.quantidade}</p>
+                    <p><strong>Fornecedor:</strong> ${produto.fornecedor}</p>
+                    <p><strong>Categoria:</strong> ${produto.categoria}</p>
+                    <p><strong>Data de Cadastro:</strong> ${produto.dataCadastro}</p>
+                    <button>Editar</button> <button>Excluir</button>
+                `;
+            } else {
+                detalhesProdutoDiv.innerHTML = '<p>Produto não encontrado.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
