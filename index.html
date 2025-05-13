@@ -5,25 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciamento de Estoque</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilos específicos para a página inicial */
+        #opcoes-principais {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background-color: var(--cor-fundo);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .opcao-card {
+            background-color: var(--cor-branco);
+            border-radius: 8px;
+            box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .opcao-card:hover {
+            transform: scale(1.05);
+        }
+
+        .opcao-card h3 {
+            color: var(--cor-primaria);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .opcao-card p {
+            color: var(--cor-texto-secundario);
+            margin-bottom: 15px;
+        }
+
+        .opcao-card a {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: var(--cor-primaria);
+            color: var(--cor-branco);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        .opcao-card a:hover {
+            background-color: var(--cor-primaria-hover);
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Sistema de Gerenciamento de Estoque</h1>
+        <div id="tema-seletor" style="position: absolute; top: 10px; right: 10px;">
+            <label for="tema">Tema:</label>
+            <select id="tema">
+                <option value="claro">Claro</option>
+                <option value="escuro">Escuro</option>
+            </select>
+        </div>
+        <h1>Easy Stock </h1>
     </header>
     <nav>
         <ul>
-            <nav>
-                <ul>
-                    <li><a href="listar_produtos.html">Listar Produtos</a></li>
-                    <li><a href="adicionar_produto.html">Adicionar Produto</a></li>
-                    <li><a href="entrada_saida.html">Entrada/Saída de Estoque</a></li>
-                    <li><a href="relatorios.html">Relatórios</a></li>
-                    <li><a href="gerenciar_categorias.html">Gerenciar Categorias</a></li> </ul>
-            </nav>
+            <li><a href="listar_produtos.html">Listar Produtos</a></li>
+            <li><a href="adicionar_produto.html">Adicionar Produto</a></li>
+            <li><a href="entrada_saida.html">Entrada/Saída de Estoque</a></li>
+            <li><a href="relatorios.html">Relatórios</a></li>
+            <li><a href="gerenciar_categorias.html">Gerenciar Categorias</a></li>
+            
         </ul>
     </nav>
     <main>
-        <p>Bem-vindo ao sistema de gerenciamento de estoque!</p>
+        <p>Bem-vindo ao sistema de gerenciamento de estoque! Acesse rapidamente as principais funcionalidades:</p>
+        <section id="resumo-estoque">
+            <h2>Resumo do Estoque</h2>
+            <div class="resumo-item">
+                <h3>Total de Produtos</h3>
+                <p id="total-produtos">Carregando...</p>
+            </div>
+            <div class="resumo-item">
+                <h3>Produtos em Estoque</h3>
+                <p id="produtos-em-estoque">Carregando...</p>
+            </div>
+            <div class="resumo-item">
+                <h3>Estoque Baixo</h3>
+                <p id="estoque-baixo">Carregando...</p>
+            </div>
+        </section>
+
+        <section id="opcoes-principais">
+            <div class="opcao-card">
+                <h3>Listar Produtos</h3>
+                <p>Visualize, edite e exclua produtos do seu estoque.</p>
+                <a href="listar_produtos.html">Ir para Listagem</a>
+            </div>
+
+            <div class="opcao-card">
+                <h3>Adicionar Produto</h3>
+                <p>Cadastre novos itens no seu sistema de estoque.</p>
+                <a href="adicionar_produto.html">Adicionar Novo</a>
+            </div>
+
+            <div class="opcao-card">
+                <h3>Entrada/Saída</h3>
+                <p>Registre as movimentações de estoque de seus produtos.</p>
+                <a href="entrada_saida.html">Gerenciar Movimentações</a>
+            </div>
+
+            <div class="opcao-card">
+                <h3>Relatórios</h3>
+                <p>Visualize relatórios importantes sobre o seu estoque.</p>
+                <a href="relatorios.html">Ver Relatórios</a>
+            </div>
+
+            <div class="opcao-card">
+                <h3>Gerenciar Categorias</h3>
+                <p>Organize seus produtos em categorias relevantes.</p>
+                <a href="gerenciar_categorias.html">Gerenciar Categorias</a>
+            </div>
+        </section>
     </main>
     <footer>
         <p>&copy; 2025 Sistema de Estoque</p>

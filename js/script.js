@@ -42,4 +42,79 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Exibir todos os produtos inicialmente
     exibirProdutos(produtosSimulados);
+    
+});
+document.addEventListener('DOMContentLoaded', function() {
+    // ... seu código JavaScript existente ...
+
+    // Simulação de dados do estoque (serão substituídos por dados do backend)
+    const totalProdutosElement = document.getElementById('total-produtos');
+    const produtosEmEstoqueElement = document.getElementById('produtos-em-estoque');
+    const estoqueBaixoElement = document.getElementById('estoque-baixo');
+
+    // Simulação de dados
+    const totalProdutosSimulado = 185;
+    const produtosEmEstoqueSimulado = 152;
+    const estoqueBaixoSimulado = 8;
+
+    totalProdutosElement.textContent = totalProdutosSimulado;
+    produtosEmEstoqueElement.textContent = produtosEmEstoqueSimulado;
+    estoqueBaixoElement.textContent = estoqueBaixoSimulado;
+});
+document.addEventListener('DOMContentLoaded', function() {
+    // ... seu código JavaScript existente ...
+
+    const temaSeletor = document.getElementById('tema');
+    const body = document.body;
+    const container = document.querySelector('.container');
+    const header = document.querySelector('header');
+    const nav = document.querySelector('nav');
+    const main = document.querySelector('main');
+    const table = document.querySelector('table');
+    const form = document.querySelector('form');
+    const detalhesProduto = document.getElementById('detalhes-produto');
+    const galeriaLogos = document.getElementById('galeria-logos');
+    const logoContainers = document.querySelectorAll('.logo-container');
+    const resumoEstoque = document.getElementById('resumo-estoque');
+    const resumoItemsH3 = document.querySelectorAll('#resumo-estoque h3');
+    const resumoItemsP = document.querySelectorAll('#resumo-estoque p');
+    const filtrosBusca = document.querySelector('.filtros-busca');
+    const filtrosBuscaLabel = document.querySelectorAll('.filtros-busca label');
+    const filtrosBuscaInputSelect = document.querySelectorAll('.filtros-busca input[type="text"], .filtros-busca select');
+
+
+    // Função para aplicar o tema
+    function aplicarTema(tema) {
+        body.className = tema === 'escuro' ? 'tema-escuro' : '';
+        if (container) container.className = `container ${tema === 'escuro' ? 'tema-escuro' : ''}`;
+        if (header) header.className = tema === 'escuro' ? 'tema-escuro' : '';
+        if (nav) nav.className = tema === 'escuro' ? 'tema-escuro' : '';
+        if (main) main.className = `main ${tema === 'escuro' ? 'tema-escuro' : ''}`;
+        if (table) table.className = `table ${tema === 'escuro' ? 'tema-escuro' : ''}`;
+        if (form) form.className = `form ${tema === 'escuro' ? 'tema-escuro' : ''}`;
+        if (detalhesProduto) detalhesProduto.className = ` ${tema === 'escuro' ? 'tema-escuro' : ''}`;
+        if (galeriaLogos) galeriaLogos.className = ` ${tema === 'escuro' ? 'tema-escuro' : ''}`;
+        logoContainers.forEach(lc => lc.className = `logo-container ${tema === 'escuro' ? 'tema-escuro' : ''}`);
+        if (resumoEstoque) resumoEstoque.className = ` ${tema === 'escuro' ? 'tema-escuro' : ''}`;
+        resumoItemsH3.forEach(h3 => h3.className = ` ${tema === 'escuro' ? 'tema-escuro' : ''}`);
+        resumoItemsP.forEach(p => p.className = ` ${tema === 'escuro' ? 'tema-escuro' : ''}`);
+        if (filtrosBusca) filtrosBusca.className = `filtros-busca ${tema === 'escuro' ? 'tema-escuro' : ''}`;
+        filtrosBuscaLabel.forEach(label => label.className = ` ${tema === 'escuro' ? 'tema-escuro' : ''}`);
+        filtrosBuscaInputSelect.forEach(inputSelect => inputSelect.className = ` ${tema === 'escuro' ? 'tema-escuro' : ''}`);
+
+
+        localStorage.setItem('temaPreferido', tema);
+    }
+
+    // Carregar tema preferido ao carregar a página
+    const temaSalvo = localStorage.getItem('temaPreferido');
+    if (temaSalvo) {
+        temaSeletor.value = temaSalvo;
+        aplicarTema(temaSalvo);
+    }
+
+    // Evento de mudança no seletor de tema
+    temaSeletor.addEventListener('change', function() {
+        aplicarTema(this.value);
+    });
 });

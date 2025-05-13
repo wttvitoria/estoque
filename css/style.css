@@ -296,3 +296,179 @@ tbody td button:last-child:hover {
 form {
     margin-top: 30px;
     padding:
+}
+/* ... seus outros estilos CSS ... */
+
+/* Estilos para a seção de resumo do estoque na página inicial */
+#resumo-estoque {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--cor-fundo);
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.resumo-item h3 {
+    color: var(--cor-primaria);
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.resumo-item p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--cor-texto-principal);
+    margin-bottom: 0;
+}
+/* ... suas outras regras CSS ... */
+
+body.tema-escuro {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+}
+
+.container.tema-escuro {
+    background-color: #252525;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+header.tema-escuro {
+    background-color: #333;
+    color: #fff;
+}
+
+nav.tema-escuro {
+    background-color: #333;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
+}
+
+nav.tema-escuro a {
+    color: #d4d4d4;
+}
+
+nav.tema-escuro a:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+main.tema-escuro {
+    background-color: #252525;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+h2.tema-escuro {
+    color: #d4d4d4;
+}
+
+table.tema-escuro {
+    border-color: #555;
+}
+
+thead.tema-escuro th {
+    background-color: #333;
+    color: #fff;
+}
+
+tbody.tema-escuro tr:nth-child(even) {
+    background-color: #333;
+}
+
+tbody.tema-escuro td {
+    border-color: #555;
+}
+
+tbody.tema-escuro button.tema-escuro {
+    /* Você pode ajustar as cores dos botões no tema escuro */
+    background-color: #555;
+    color: #fff;
+}
+
+tbody.tema-escuro button.tema-escuro:hover {
+    background-color: #777;
+}
+
+form.tema-escuro {
+    background-color: #333;
+    border-color: #555;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+form.tema-escuro label {
+    color: #d4d4d4;
+}
+
+form.tema-escuro input[type="text"],
+form.tema-escuro input[type="number"],
+form.tema-escuro input[type="date"],
+form.tema-escuro textarea,
+form.tema-escuro select {
+    background-color: #444;
+    color: #d4d4d4;
+    border-color: #555;
+}
+
+button[type="submit"].tema-escuro {
+    background-color: #5cb85c; /* Cor de sucesso no tema escuro */
+    color: #fff;
+}
+
+button[type="submit"].tema-escuro:hover {
+    background-color: #4cae4c;
+}
+
+footer.tema-escuro {
+    background-color: #333;
+    color: #fff;
+}
+
+.filtros-busca.tema-escuro label {
+    color: #d4d4d4;
+}
+
+.filtros-busca.tema-escuro input[type="text"],
+.filtros-busca.tema-escuro select {
+    background-color: #444;
+    color: #d4d4d4;
+    border-color: #555;
+}
+
+#detalhes-produto.tema-escuro {
+    background-color: #252525;
+    border-color: #555;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+    color: #d4d4d4;
+}
+
+#detalhes-produto.tema-escuro strong {
+    color: #fff;
+}
+
+#galeria-logos.tema-escuro {
+    background-color: #252525;
+}
+
+.logo-container.tema-escuro {
+    background-color: #333;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.logo-container.tema-escuro p {
+    color: #d4d4d4;
+}
+
+#resumo-estoque.tema-escuro {
+    background-color: #252525;
+}
+
+.resumo-item.tema-escuro h3 {
+    color: #bbb;
+}
+
+.resumo-item.tema-escuro p {
+    color: #fff;
+}
